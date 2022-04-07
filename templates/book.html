@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    {% include 'cdnlines.html' %}
+  </head>
+  <body style="background-color:gray;">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <h4 class="text-center" style="margin-top:10px;">Book list</h4>
+          {% if bookdet %}
+          <table class="table table-bordered text-center">
+            <thead class="bg-success">
+              <tr>
+                <th>Book Name</th>
+                <th>Author</th>
+                <th>publication</th>
+                <th>Edition Number</th>
+
+              </tr>
+            </thead>
+            <tbody class="bg-light">
+            {% for v in bookdet %}
+            <tr>
+              <td>{{v.book_name}}</td>
+              <td>{{v.author}}</td>
+              <td>{{v.publication}}</td>
+              <td>{{v.edition_number}}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+          {% else %}
+          <h3>No Book Deatils Available</h3>
+          {% endif %}
+        </div>
+
+
+        </div>
+
+      </div>
+
+
+  </body>
+</html>
